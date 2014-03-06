@@ -27,4 +27,9 @@ constraints = [ ...
     distance(  walls, 04, R, 02, L, 4.50 - 0.85); ...
     ];
 
-% equal_thinkness()
+constraints_M = constraints(:, 1:end-1);
+constraints_v = constraints(:, end);
+
+raw_sol = constraints_M \ constraints_v;
+sol     = reshape(raw_sol, 4, size(raw_sol, 1) / 4)';
+rects   = draw_plan(walls, sol);
