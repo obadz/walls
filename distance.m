@@ -35,10 +35,10 @@ function [r] = distance(walls, i, si, j, sj, d, handle_thickness=1)
                 r(1, c + L) = w;
             case [E, Verti]
                 r(1, c + X) = w;
-                r(1, c + T) = -w/2 * handle_thickness;
+                r(1, c + T) = w/2 * handle_thickness;
             case [W, Verti]
                 r(1, c + X) = w;
-                r(1, c + T) = w/2 * handle_thickness;
+                r(1, c + T) = -w/2 * handle_thickness;
             case [N, Horiz]
                 r(1, c + Y) = w;
                 r(1, c + T) = -w/2 * handle_thickness;
