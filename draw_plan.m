@@ -17,7 +17,10 @@ function [rect] = draw_plan( walls, sol )
 
     rand('seed', 0);
 
+    figure();
+
     for k = 1:size(rect, 1)
         rectangle('Position', rect(k, :), 'FaceColor', rand(1, 3));
+        text(rect(k, 1) + rect(k, 3) / 2, rect(k, 2) + rect(k, 4) / 2, sprintf('%d', k), 'horizontalalignment', 'center');
     end
 end
