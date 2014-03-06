@@ -15,7 +15,9 @@ function [rect] = draw_plan( walls, sol )
     rect(i, 3) = sol(i, 4);
     rect(i, 4) = sol(i, 3);
 
+    rand('seed', 0);
+
     for k = 1:size(rect, 1)
-        rectangle('Position', rect(k, :), 'FaceColor', [1, 0, 0]); 
+        rectangle('Position', rect(k, :), 'FaceColor', rand(1, 3));
     end
 end
